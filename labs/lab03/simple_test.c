@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
+#include <string.h>
 
 #define simple_assert(message, test)                                           \
   do {                                                                         \
@@ -53,11 +55,66 @@ void setup(void) {
   usleep(3000000);
 }
 
+void alarm_handler(int alarm) {
+    exit(124);
+}
+
 /**
  * Run all the test in the test suite.
  */
 void run_all_tests() { /* TODO: Add your code here. */
-}
+    setup();
+    pid_t childrenPid[num_tests];
+
+    int pipeResult[2];
+    pipe(pipeResult);
+    for(int i=0;i<num_tests;i++){
+       signal(SIGALRM, alarm_handler);
+        childrenPid[i] = fork();
+        int f = childrenPid[i];
+        if(f == 0){
+          alarm(3);
+          char *tresult = test_funcs[i]();
+          if(tresult == TEST_PASSED){
+            close(pipeResult[1]);
+            exit(0);
+          }else{
+            write(pipeResult[1], tresult, strlen(tresult));
+            close(pipeResult[1]);
+            exit(1);
+          }
+        }
+    }
+
+    
+    for(int i=0;i<num_tests;i++){
+      int status;
+      waitpid(childrenPid[i], &status, 0);
+
+      int exit_code = WEXITSTATUS(status);
+
+      
+      if(WIFEXITED(status)){
+        if(exit_code == 0){
+          printf("Test Passed\n");
+
+          
+        }else if(exit_code == 1){
+          char buff[128];
+          read(pipeResult[0], buff, 128);
+          printf("Test Failed: %s\n", buff);
+          close(pipeResult[0]);
+
+        }else if(exit_code == 124){
+          printf("Test Timed Out\n");
+        }
+      }
+      else if(WIFSIGNALED(status)){
+        printf("Test Crashed\n");
+      }
+    }
+      
+  }
 
 char *test1() {
   printf("starting test 1\n");
@@ -141,7 +198,7 @@ int main(int argc, char **argv) {
   add_test(test1);
   add_test(test2);
   add_test(test3);
-  /* add_test(test4); */
-  /* add_test(test5); */
+  add_test(test4);
+  add_test(test5);
   run_all_tests();
 }
