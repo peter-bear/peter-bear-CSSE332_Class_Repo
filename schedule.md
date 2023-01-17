@@ -546,13 +546,13 @@ No class, enjoy the break!</td>
 </td>
 </tr>
 <tr>
-<tr><td markdown="span" colspan="5" style="padding-top:2px;padding-bottom:2px;background-color:#167F92;color:#FFF;"></td></tr><td rowspan="5" markdown="span" style="font-size:xx-large;"><a name="w6">6</a></td>
+<tr><td markdown="span" colspan="5" style="padding-top:2px;padding-bottom:2px;background-color:#167F92;color:#FFF;"></td></tr><td rowspan="6" markdown="span" style="font-size:xx-large;"><a name="w6">6</a></td>
 <td markdown="span">
 17 <br/> Mon, Jan 09 2023</td>
 <td markdown="span">
 </td>
 <td markdown="span" style="text-align:center">
-<a href="{{ site.baseurl }}/notes/session17"> Advanced Paging </a></td>
+<a href="{{ site.baseurl }}/notes/session17"> Paging Activity </a></td>
 <td markdown="span">
 </td>
 </tr>
@@ -564,14 +564,33 @@ No class, enjoy the break!</td>
 <td markdown="span">
 </td>
 <td markdown="span" style="text-align:center">
-<a href="{{ site.baseurl }}/notes/session18"> Threads: Lightweight Processes </a></td>
+<a href="{{ site.baseurl }}/labs/lab05"> Lab: Virtual Memory II </a></td>
 <td markdown="span">
 </td>
 </tr>
 <tr>
 <td markdown="span">
 19 <br/> Thu, Jan 12 2023</td>
+<td markdown="span" style="text-align:left;">
+{::nomarkdown}<ul style="margin:0;padding:.5rem">
+<li> <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf"> Chapter 26 of OSTEP </a> </li>
+</ul>{:/}
+</td>
+<td markdown="span" style="text-align:center">
+<a href="{{ site.baseurl }}/notes/session18"> Threads: Lightweight Processes </a></td>
 <td markdown="span">
+</td>
+</tr>
+<tr>
+<td markdown="span" colspan="4"> [[Challenge] Virtual Memory II]({{ site.baseurl }}/labs/lab05) DUE Thu, Jan 12 2023 23:59 [Submission box]({{ site.gradescope_url }}) <font color="#aaa"> grader: @TBA </font> </td></tr>
+<tr>
+<td markdown="span">
+20 <br/> Fri, Jan 13 2023</td>
+<td markdown="span" style="text-align:left;">
+{::nomarkdown}<ul style="margin:0;padding:.5rem">
+<li> <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf"> Chapter 28 of OSTEP </a> </li>
+<li> <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-cv.pdf"> Chapter 30 of OSTEP </a> </li>
+</ul>{:/}
 </td>
 <td markdown="span" style="text-align:center">
 <a href="{{ site.baseurl }}/notes/session19"> Concurrency: Mutex & Condition Variables </a></td>
@@ -579,8 +598,9 @@ No class, enjoy the break!</td>
 </td>
 </tr>
 <tr>
+<tr><td markdown="span" colspan="5" style="padding-top:2px;padding-bottom:2px;background-color:#167F92;color:#FFF;"></td></tr><td rowspan="5" markdown="span" style="font-size:xx-large;"><a name="w7">7</a></td>
 <td markdown="span">
-20 <br/> Fri, Jan 13 2023</td>
+21 <br/> Mon, Jan 16 2023</td>
 <td markdown="span">
 </td>
 <td markdown="span" style="text-align:center">
@@ -589,9 +609,10 @@ No class, enjoy the break!</td>
 </td>
 </tr>
 <tr>
-<tr><td markdown="span" colspan="5" style="padding-top:2px;padding-bottom:2px;background-color:#167F92;color:#FFF;"></td></tr><td rowspan="4" markdown="span" style="font-size:xx-large;"><a name="w7">7</a></td>
+<td markdown="span" colspan="4"> [Threads & Mutex Basics]({{ site.baseurl }}/labs/lab06) DUE Mon, Jan 16 2023 23:59 [Submission box]({{ site.gradescope_url }}) <font color="#aaa"> grader: @TBA </font> </td></tr>
+<tr>
 <td markdown="span">
-21 <br/> Mon, Jan 16 2023</td>
+22 <br/> Tue, Jan 17 2023</td>
 <td markdown="span">
 </td>
 <td markdown="span" style="text-align:center">
@@ -601,7 +622,7 @@ No class, enjoy the break!</td>
 </tr>
 <tr>
 <td markdown="span">
-22 <br/> Tue, Jan 17 2023</td>
+23 <br/> Thu, Jan 19 2023</td>
 <td markdown="span">
 </td>
 <td markdown="span" style="text-align:center">
@@ -611,18 +632,13 @@ No class, enjoy the break!</td>
 </tr>
 <tr>
 <td markdown="span">
-23 <br/> Thu, Jan 19 2023</td>
+24 <br/> Fri, Jan 20 2023</td>
 <td markdown="span">
 </td>
 <td markdown="span" style="text-align:center">
 <a href="{{ site.baseurl }}/notes/session23"> Concurrency: RCU </a></td>
 <td markdown="span">
 </td>
-</tr>
-<tr>
-<td markdown="span">
-24 <br/> Fri, Jan 20 2023</td>
-<td markdown="span" colspan="3">N/A</td>
 </tr>
 <tr>
 <tr><td markdown="span" colspan="5" style="padding-top:2px;padding-bottom:2px;background-color:#167F92;color:#FFF;"></td></tr><td rowspan="4" markdown="span" style="font-size:xx-large;"><a name="w8">8</a></td>

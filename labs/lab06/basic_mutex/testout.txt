@@ -1,0 +1,44 @@
+Start: Red
+End  : Red
+Start: Red
+End  : Red
+Start: Red
+End  : Red
+Start: Blue
+Start: Red
+End  : Red
+End  : Blue
+Start: Red
+End  : Red
+thread 1 done
+Start: Red
+End  : Red
+Start: Blue
+Start: Red
+End  : Red
+End  : Blue
+Start: Blue
+Start: Red
+End  : Red
+End  : Blue
+Start: Blue
+Start: Red
+End  : Red
+End  : Blue
+thread 3 done
+Start: Red
+End  : Red
+Start: Blue
+End  : Blue
+Start: Blue
+End  : Blue
+Start: Blue
+Start: Red
+End  : Red
+End  : Blue
+Start: Red
+End  : Red
+Start: Blue
+End  : Blue
+thread 2 done
+Everything finished
