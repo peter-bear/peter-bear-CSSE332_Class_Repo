@@ -9,7 +9,7 @@
 
 volatile int data = 0;
 pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
-pthread_cond_t  turn = PTHREAD_COND_INITIALIZER;
+pthread_cond_t  turn = ;
 
 unsigned int running_writers = 0;
 unsigned int waiting_writers = 0;
