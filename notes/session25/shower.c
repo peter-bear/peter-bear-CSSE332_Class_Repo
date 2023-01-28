@@ -43,17 +43,58 @@ thread 4 decides to stay in the shower a little longer
 
  */
 
+
+ /*
+  State of the world:
+  1. shower occupy
+  2. number of thread waiting
+
+Shower:
+  if occupy? wait go_to_shower
+
+Waiting Area:
+  if (number_of_thread == 0) (stay in shower) leave
+
+ */
+
+// set up state variables
+int shower_occupied = 0;
+int num_thread_waiting = 0;
+
+pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+pthread_cond_t door = PTHREAD_COND_INITIALIZER;
+
 void *thread(void *arg)
 {
     int num = (int) arg; //ignore the sketchy way I'm passing a parameter here
     printf("thread %d wants to use the shower\n", num);
     // I reccommend you leave the above print statement outside of
     // any lock, otherwise a certian kind of bug will be less obvious
-    
+    pthread_mutex_lock(&lock);
+    num_thread_waiting++;
+    while(shower_occupied){
+        pthread_cond_wait(&door, &lock);
+    }
+    num_thread_waiting--;
+    shower_occupied  = 1;
+    pthread_mutex_unlock(&lock);
+
+    // exactly one thread executing at this time
+
     printf("thread %d is using shower\n", num);
     while(1) {
 
         sleep(SHOWER_TIME);
+        // anytime read or change the global variables, grab the lock
+        pthread_mutex_lock(&lock);
+        if(num_thread_waiting > 0){            
+            shower_occupied = 0;
+            pthread_mutex_unlock(&lock);
+
+            pthread_cond_signal(&door);
+            return NULL;
+        }
+        pthread_mutex_unlock(&lock);
         // if(your check to see if another thread is waiting) {
         //    printf("thread %d is finished with shower\n", num);
         //    other code
@@ -61,7 +102,7 @@ void *thread(void *arg)
         // }
 
         printf("thread %d decides to stay in the shower a little longer\n", num);
-    
+        
     }
 }
 

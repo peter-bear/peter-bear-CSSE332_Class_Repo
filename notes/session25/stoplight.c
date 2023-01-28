@@ -87,6 +87,31 @@ green in northsouth direction
 
  */
 
+/*
+    State of the world
+    1. Color of light
+        Green, Yellow
+    2. Keep track the number of cars in the intersection
+
+    North South Car
+    if (light !NS_Green) wait goto_intersection
+    if (# of car == 0 && light == Yellow) signal_light
+
+    Light
+    Green -> (ns) Yellow
+    if (light == Yellow)
+*/
+
+int light = 0;
+int num_car_intersection = 0;
+pthread_mutex_t lock;
+pthread_cond_t lightCV;
+pthread_cond_t nscars;
+pthread_cond_t ew cars;
+
+#define YELLOW 0
+#define GREENns 1
+#define GREENew 2
 
 void *north_south(void *arg)
 {
