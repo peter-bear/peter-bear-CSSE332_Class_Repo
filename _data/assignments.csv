@@ -23,5 +23,9 @@ Condition Variables Basics,lab07,2023-01-19 23:59:00,TBA,[Submission box]({{ sit
 Userspace Threads I,lab09,2023-01-30 23:59:00,TBA,[Submission box]({{ site.gradescope_url }})
 [Challenge] Userspace Threads II,lab10,2023-02-02 23:59:00,TBA,[Submission box]({{ site.gradescope_url }})
 [Challenge] Hybrid Threads,lab11,2023-02-06 23:59:00,TBA,[Submission box]({{ site.gradescope_url }})
+<<<<<<< HEAD
 
 >>>>>>> 1333f4b630819400cd9692207e382e8582e41070
+=======
+[Challenge] Mini-Project I,lab12,2023-02-09 23:59:00,TBA,[Submission box]({{ site.gradescope_url }})
+>>>>>>> 9ad2014b60be876bfe9dbf899d96d05fa7956c74
