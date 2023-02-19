@@ -28,4 +28,8 @@ Userspace Threads I,lab09,2023-01-30 23:59:00,TBA,[Submission box]({{ site.grade
 >>>>>>> 1333f4b630819400cd9692207e382e8582e41070
 =======
 [Challenge] Mini-Project I,lab12,2023-02-09 23:59:00,TBA,[Submission box]({{ site.gradescope_url }})
+<<<<<<< HEAD
 >>>>>>> 9ad2014b60be876bfe9dbf899d96d05fa7956c74
+=======
+Stack Smashing Lab,lab13,2023-02-13 23:59:00,TBA,[Submission box]({{ site.gradescope_url }})
+>>>>>>> 3e9c57f22118e3367d06e5a2c148ebd72c82f222
